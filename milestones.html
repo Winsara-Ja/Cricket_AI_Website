@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Milestones — CRICKAI Research</title>
+  <meta name="description" content="Track the progress and milestones of the CrickAI research project." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo"><img src="assets/images/logo-black.jpeg" alt="CrickAI" /></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="domain.html">Domain</a>
+      <a href="milestones.html" class="active">Milestones</a>
+      <a href="documents.html">Documents</a>
+      <a href="presentations.html">Presentations</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-right">
+      
+      <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="domain.html">Domain</a>
+  <a href="milestones.html">Milestones</a>
+      <a href="documents.html">Documents</a>
+      <a href="presentations.html">Presentations</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label">Project Timeline</span>
+    <h1>Milestones & Progress.</h1>
+    <p>From project initiation to final deployment — every key milestone on the journey.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="timeline">
+
+      <div class="timeline-item completed fade-in">
+        <div class="timeline-date">June 2024</div>
+        <div class="timeline-card">
+          <h3>Project Proposal Approved</h3>
+          <p>Research topic finalised and supervisor approval obtained. Initial literature review commenced covering sports analytics, pose estimation, and action recognition.</p>
+          <span class="timeline-tag">Completed</span>
+        </div>
+      </div>
+
+      <div class="timeline-item completed fade-in">
+        <div class="timeline-date">August 2024</div>
+        <div class="timeline-card">
+          <h3>Dataset Collection & Annotation</h3>
+          <p>Captured practice-session footage from cricket nets. Annotated shot types, delivery lengths, and action legality labels. Built the initial training dataset.</p>
+          <span class="timeline-tag">Completed</span>
+        </div>
+      </div>
+
+      <div class="timeline-item completed fade-in">
+        <div class="timeline-date">October 2024</div>
+        <div class="timeline-card">
+          <h3>Pose Estimation Pipeline</h3>
+          <p>Integrated MediaPipe Pose for real-time body landmark extraction. Built the frame extraction and calibration pipeline using stump detection.</p>
+          <span class="timeline-tag">Completed</span>
+        </div>
+      </div>
+
+      <div class="timeline-item completed fade-in">
+        <div class="timeline-date">December 2024</div>
+        <div class="timeline-card">
+          <h3>Shot Classification Model v1</h3>
+          <p>Trained temporal convolutional network on pose-landmark sequences. Achieved initial classification accuracy across six shot categories.</p>
+          <span class="timeline-tag">Completed</span>
+        </div>
+      </div>
+
+      <div class="timeline-item completed fade-in">
+        <div class="timeline-date">February 2025</div>
+        <div class="timeline-card">
+          <h3>Bowling Analysis Module</h3>
+          <p>Implemented ball tracking with YOLOv8 and homography-based pitch mapping. Delivered speed estimation, length classification, and trajectory visualisation.</p>
+          <span class="timeline-tag">Completed</span>
+        </div>
+      </div>
+
+      <div class="timeline-item completed fade-in">
+        <div class="timeline-date">March 2025</div>
+        <div class="timeline-card">
+          <h3>Mobile App Development</h3>
+          <p>Built cross-platform React Native app with session management, video upload, calibration UI, and result dashboards for both batting and bowling analysis.</p>
+          <span class="timeline-tag">Completed</span>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-date">May 2025</div>
+        <div class="timeline-card">
+          <h3>Final Evaluation & Deployment</h3>
+          <p>End-to-end system testing, user evaluation with cricket coaches, performance benchmarking, and final thesis submission.</p>
+          <span class="timeline-tag">Upcoming</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><img src="assets/images/logo-black.jpeg" alt="CrickAI" /></a>
+        <p>AI-Powered Cricket Analysis — a research initiative on intelligent video-based performance evaluation.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <div class="footer-links">
+          <a href="domain.html">Domain</a>
+          <a href="milestones.html">Milestones</a>
+      <a href="documents.html">Documents</a>
+      <a href="presentations.html">Presentations</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="GitHub">⌨</a>
+          <a href="#" aria-label="Email">✉</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 CRICKAI Research. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

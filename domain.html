@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Domain — CRICKAI Research</title>
+  <meta name="description" content="Explore the research domain behind CrickAI — from literature survey to methodology." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo"><img src="assets/images/logo-black.jpeg" alt="CrickAI" /></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="domain.html" class="active">Domain</a>
+      <a href="milestones.html">Milestones</a>
+      <a href="documents.html">Documents</a>
+      <a href="presentations.html">Presentations</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-right">
+      
+      <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="domain.html">Domain</a>
+  <a href="milestones.html">Milestones</a>
+      <a href="documents.html">Documents</a>
+      <a href="presentations.html">Presentations</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label">Research Domain</span>
+    <h1>The science behind CRICKAI.</h1>
+    <p>From foundational literature to applied methodology — explore every layer of the project.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="domain-layout">
+      <aside class="domain-sidebar">
+        <h4>Sections</h4>
+        <a href="#lit" class="active">📖 Literature Survey</a>
+        <a href="#gap">🔍 Research Gap</a>
+        <a href="#problem">⚙ Research Problem</a>
+        <a href="#objectives">☰ Objectives</a>
+        <a href="#methodology">🧪 Methodology</a>
+        <a href="#tech">🛠 Technologies</a>
+      </aside>
+
+      <div class="domain-content">
+        <!-- Literature Survey -->
+        <div class="domain-block fade-in" id="lit">
+          <div class="block-number">01</div>
+          <h3>Literature Survey</h3>
+          <p>Cricket analytics has evolved from manual scorecards to sensor-driven performance systems. Recent advances in computer vision — particularly human pose estimation frameworks such as MediaPipe and OpenPose — have enabled non-invasive motion analysis from standard video footage.</p>
+          <p>Research in sports action recognition leverages convolutional and recurrent neural networks to classify movements from sequential frame data. Transfer learning with architectures like ResNet, EfficientNet, and Vision Transformers has shown strong performance in fine-grained activity recognition tasks relevant to cricket shot identification.</p>
+          <p>Bowling action legality detection has been studied using marker-based motion capture in laboratory settings. However, markerless video-based approaches remain under-explored, presenting opportunities for scalable, field-deployable solutions.</p>
+        </div>
+
+        <!-- Research Gap -->
+        <div class="domain-block fade-in" id="gap">
+          <div class="block-number">02</div>
+          <h3>Research Gap</h3>
+          <p>Existing cricket analysis tools are either prohibitively expensive (requiring specialised motion-capture labs) or limited to basic statistics like run rates and economy. There is no integrated, mobile-first platform that combines real-time batting shot classification, biomechanical similarity scoring, bowling performance metrics, and action legality detection in a single pipeline.</p>
+          <p>Moreover, current similarity-scoring methods rely on hand-crafted features rather than learned representations, limiting their generalisation across diverse playing styles and conditions.</p>
+        </div>
+
+        <!-- Research Problem -->
+        <div class="domain-block fade-in" id="problem">
+          <div class="block-number">03</div>
+          <h3>Research Problem</h3>
+          <p>How can we build an end-to-end, video-based cricket analysis system that performs shot classification, shot similarity scoring, bowler performance evaluation, and bowling action legality detection — using only standard smartphone camera footage, without specialised hardware or controlled environments?</p>
+        </div>
+
+        <!-- Objectives -->
+        <div class="domain-block fade-in" id="objectives">
+          <div class="block-number">04</div>
+          <h3>Objectives</h3>
+          <p><strong>1.</strong> Develop a shot classification model that accurately categorises batting strokes (drive, cut, pull, sweep, defence, etc.) from video sequences using pose estimation and deep learning.</p>
+          <p><strong>2.</strong> Build a similarity scoring engine that compares a player's shot mechanics against reference professional players, providing quantitative feedback on technique closeness.</p>
+          <p><strong>3.</strong> Create a bowling performance analysis module that extracts delivery speed, length, line, trajectory, and session-level aggregate statistics from video.</p>
+          <p><strong>4.</strong> Implement a bowling action legality detector that estimates elbow extension angles from video to flag potentially illegal bowling actions.</p>
+        </div>
+
+        <!-- Methodology -->
+        <div class="domain-block fade-in" id="methodology">
+          <div class="block-number">05</div>
+          <h3>Methodology</h3>
+          <p><strong>Data Collection:</strong> Match and practice session footage captured using smartphone cameras at standard frame rates. Stump-to-stump calibration enables spatial measurements from 2D video.</p>
+          <p><strong>Pose Estimation:</strong> MediaPipe Pose is used to extract 33 body-landmark coordinates per frame, forming the input feature set for downstream models.</p>
+          <p><strong>Shot Classification:</strong> A temporal convolutional network (TCN) processes sequences of pose landmarks to classify batting shots into predefined categories.</p>
+          <p><strong>Similarity Scoring:</strong> Dynamic Time Warping (DTW) and learned embeddings compare landmark trajectories between a player's shot and reference shots from professional players.</p>
+          <p><strong>Bowling Analysis:</strong> Ball tracking via object detection (YOLOv8) combined with homography-based pitch mapping yields speed, length, and trajectory metrics.</p>
+          <p><strong>Legality Detection:</strong> Elbow joint angles are computed from pose landmarks across the bowling action to detect hyperextension beyond the 15° ICC threshold.</p>
+        </div>
+
+        <!-- Technologies -->
+        <div class="domain-block fade-in" id="tech">
+          <div class="block-number">06</div>
+          <h3>Technologies</h3>
+          <p><strong>Frontend:</strong> React Native with Expo for the cross-platform mobile application.</p>
+          <p><strong>Backend:</strong> Python FastAPI microservices for video processing, model inference, and data management.</p>
+          <p><strong>ML / CV:</strong> MediaPipe, YOLOv8, PyTorch, OpenCV, scikit-learn.</p>
+          <p><strong>Infrastructure:</strong> Firebase for authentication and storage; deployed on cloud GPU instances for inference.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><img src="assets/images/logo-black.jpeg" alt="CrickAI" /></a>
+        <p>AI-Powered Cricket Analysis — a research initiative on intelligent video-based performance evaluation.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <div class="footer-links">
+          <a href="domain.html">Domain</a>
+          <a href="milestones.html">Milestones</a>
+      <a href="documents.html">Documents</a>
+      <a href="presentations.html">Presentations</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="GitHub">⌨</a>
+          <a href="#" aria-label="Email">✉</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 CRICKAI Research. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

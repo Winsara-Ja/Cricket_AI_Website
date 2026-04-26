@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — CRICKAI Research</title>
+  <meta name="description" content="Get in touch with the CrickAI research team." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo"><img src="assets/images/logo-black.jpeg" alt="CrickAI" /></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="domain.html">Domain</a>
+      <a href="milestones.html">Milestones</a>
+      <a href="documents.html">Documents</a>
+      <a href="presentations.html">Presentations</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <div class="nav-right">
+      
+      <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="domain.html">Domain</a>
+  <a href="milestones.html">Milestones</a>
+      <a href="documents.html">Documents</a>
+      <a href="presentations.html">Presentations</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label">Get In Touch</span>
+    <h1>Contact us.</h1>
+    <p>Have questions about CrickAI? We'd love to hear from you.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info-item fade-in">
+          <div class="contact-icon">✉</div>
+          <div>
+            <h4>Email</h4>
+            <p>crickai.research@gmail.com</p>
+          </div>
+        </div>
+        <div class="contact-info-item fade-in">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Location</h4>
+            <p>Sri Lanka Institute of Information Technology<br />Malabe, Sri Lanka</p>
+          </div>
+        </div>
+        <div class="contact-info-item fade-in">
+          <div class="contact-icon">⌨</div>
+          <div>
+            <h4>GitHub</h4>
+            <p>github.com/crickai</p>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form fade-in" onsubmit="event.preventDefault(); alert('Message sent! (Demo)');">
+        <input type="text" placeholder="Your Name" required id="contact-name" />
+        <input type="email" placeholder="Your Email" required id="contact-email" />
+        <input type="text" placeholder="Subject" id="contact-subject" />
+        <textarea rows="5" placeholder="Your Message" required id="contact-message"></textarea>
+        <button type="submit">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><img src="assets/images/logo-black.jpeg" alt="CrickAI" /></a>
+        <p>AI-Powered Cricket Analysis — a research initiative on intelligent video-based performance evaluation.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <div class="footer-links">
+          <a href="domain.html">Domain</a>
+          <a href="milestones.html">Milestones</a>
+      <a href="documents.html">Documents</a>
+      <a href="presentations.html">Presentations</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="GitHub">⌨</a>
+          <a href="#" aria-label="Email">✉</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 CRICKAI Research. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
