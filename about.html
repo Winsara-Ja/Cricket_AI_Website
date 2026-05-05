@@ -1,218 +1,297 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — CRICKAI Research</title>
-  <meta name="description" content="Meet the team behind CrickAI — the researchers driving AI-powered cricket analysis." />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-<nav class="navbar" id="navbar">
-  <div class="container">
-    <a href="index.html" class="nav-logo"><img src="assets/images/logo-black.jpeg" alt="CrickAI" /></a>
-    <div class="nav-links">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — CRICKAI Research</title>
+    <meta
+      name="description"
+      content="Meet the team behind CrickAI — the researchers driving AI-powered cricket analysis."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <a href="index.html" class="nav-logo"
+          ><img src="assets/images/logo-black.jpeg" alt="CrickAI"
+        /></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="domain.html">Domain</a>
+          <a href="milestones.html">Milestones</a>
+          <a href="documents.html">Documents</a>
+          <a href="presentations.html">Presentations</a>
+          <a href="about.html" class="active">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-right">
+          <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+        </div>
+      </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
       <a href="index.html">Home</a>
       <a href="domain.html">Domain</a>
       <a href="milestones.html">Milestones</a>
       <a href="documents.html">Documents</a>
       <a href="presentations.html">Presentations</a>
-      <a href="about.html" class="active">About</a>
+      <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
-    <div class="nav-right">
-      <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
-    </div>
-  </div>
-</nav>
-<div class="mobile-nav" id="mobileNav">
-  <a href="index.html">Home</a>
-  <a href="domain.html">Domain</a>
-  <a href="milestones.html">Milestones</a>
-  <a href="documents.html">Documents</a>
-  <a href="presentations.html">Presentations</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</div>
 
-<section class="page-hero">
-  <div class="container">
-    <span class="section-label">Platform & People</span>
-    <h1>The story behind CRICKAI.</h1>
-    <p>An undergraduate research project leveraging AI and computer vision to revolutionise cricket performance analysis.</p>
-  </div>
-</section>
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-label">Platform & People</span>
+        <h1>The story behind CRICKAI.</h1>
+        <p>
+          An undergraduate research project leveraging AI and computer vision to
+          revolutionise cricket performance analysis.
+        </p>
+      </div>
+    </section>
 
-<!-- About the Project -->
-<section class="section">
-  <div class="container">
-    <div class="about-project fade-in">
-      <span class="section-label">About the Project</span>
-      <h2 class="section-title">What is CRICKAI?</h2>
-      <p class="section-desc" style="max-width:800px;">CRICKAI is an end-to-end, AI-powered cricket analysis platform that uses computer vision and deep learning to evaluate batting and bowling performance from standard smartphone video. Rather than relying on expensive motion-capture labs or manual assessment, CRICKAI delivers automated, real-time analysis accessible to any player or coach with a phone camera.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Four Components -->
-<section class="section" style="padding-top:0;">
-  <div class="container">
-    <span class="section-label fade-in">Architecture</span>
-    <h2 class="section-title fade-in">Four tightly-integrated components.</h2>
-    <p class="section-desc fade-in">Each module addresses a distinct aspect of cricket performance, combining into a unified analysis pipeline.</p>
-
-    <div class="features-grid" style="margin-top:2rem;">
-      <div class="feature-card fade-in">
-        <span class="feature-number">01</span>
-        <div class="feature-icon">⚡</div>
-        <h3>Shot Classification</h3>
-        <p>Parses video frames using MediaPipe pose estimation, extracting body-landmark sequences fed into a temporal convolutional network to categorise batting strokes across multiple shot types.</p>
-      </div>
-      <div class="feature-card fade-in">
-        <span class="feature-number">02</span>
-        <div class="feature-icon">⇌</div>
-        <h3>Shot Similarity</h3>
-        <p>Compares a player's pose-landmark trajectories against reference professional players using Dynamic Time Warping and learned embeddings, producing quantitative similarity scores.</p>
-      </div>
-      <div class="feature-card fade-in">
-        <span class="feature-number">03</span>
-        <div class="feature-icon">🎯</div>
-        <h3>Bowler Performance</h3>
-        <p>Tracks ball trajectory via YOLOv8 object detection combined with homography-based pitch mapping to extract speed, length, line, and session-aggregate statistics from video.</p>
-      </div>
-      <div class="feature-card fade-in">
-        <span class="feature-number">04</span>
-        <div class="feature-icon">⚖</div>
-        <h3>Bowling Legality</h3>
-        <p>Estimates elbow extension angles from pose landmarks across the bowling action to detect hyperextension beyond the 15° ICC threshold, flagging potentially illegal actions.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- About Team & SLIIT -->
-<section class="section" style="background:var(--bg-secondary);">
-  <div class="container">
-    <span class="section-label fade-in">About the Team & SLIIT</span>
-    <h2 class="section-title fade-in">Built at SLIIT.</h2>
-    <p class="section-desc fade-in" style="max-width:800px;">CRICKAI is built by four undergraduate researchers from the <strong>Sri Lanka Institute of Information Technology (SLIIT)</strong>, pursuing a B.Sc. (Hons) in Information Technology specialising in Software Engineering. The project applies cutting-edge AI techniques to a real-world sports analytics problem.</p>
-  </div>
-</section>
-
-<!-- Supervisors -->
-<section class="section">
-  <div class="container">
-    <span class="section-label fade-in">Supervision</span>
-    <h2 class="section-title fade-in">Project Supervisors</h2>
-    <div class="team-grid" style="max-width:540px;">
-      <div class="team-card fade-in">
-        <div class="team-avatar">SV</div>
-        <h3>Supervisor Name</h3>
-        <p class="role">Supervisor</p>
-        <p>Department of Information Technology, SLIIT.</p>
-      </div>
-      <div class="team-card fade-in">
-        <div class="team-avatar">CS</div>
-        <h3>Co-Supervisor Name</h3>
-        <p class="role">Co-Supervisor</p>
-        <p>Department of Information Technology, SLIIT.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Research Team -->
-<section class="section" style="padding-top:0;">
-  <div class="container">
-    <span class="section-label fade-in">Researchers</span>
-    <h2 class="section-title fade-in">Research Team</h2>
-    <div class="team-grid">
-      <div class="team-card fade-in">
-        <div class="team-avatar">R1</div>
-        <h3>Researcher 1</h3>
-        <p class="role">Shot Classification</p>
-        <p>Lead for the Shot Classification module — temporal convolutional network for automated batting stroke categorisation.</p>
-        <span class="team-id">IT00000001</span>
-      </div>
-      <div class="team-card fade-in">
-        <div class="team-avatar">R2</div>
-        <h3>Researcher 2</h3>
-        <p class="role">Shot Similarity</p>
-        <p>Lead for the Shot Similarity engine — DTW and learned embeddings for technique comparison scoring.</p>
-        <span class="team-id">IT00000002</span>
-      </div>
-      <div class="team-card fade-in">
-        <div class="team-avatar">R3</div>
-        <h3>Researcher 3</h3>
-        <p class="role">Bowler Performance</p>
-        <p>Lead for Bowler Performance analysis — ball tracking, speed estimation, and delivery metrics from video.</p>
-        <span class="team-id">IT00000003</span>
-      </div>
-      <div class="team-card fade-in">
-        <div class="team-avatar">R4</div>
-        <h3>Researcher 4</h3>
-        <p class="role">Bowling Legality</p>
-        <p>Lead for Bowling Legality detection — elbow-angle estimation for illegal action flagging.</p>
-        <span class="team-id">IT00000004</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Research Scope -->
-<section class="section" style="background:var(--bg-secondary);">
-  <div class="container">
-    <span class="section-label fade-in">About the Research</span>
-    <h2 class="section-title fade-in">Dissertation & Deliverables</h2>
-    <p class="section-desc fade-in" style="max-width:800px;">This research sits at the intersection of computer vision, deep learning, and sports analytics. Each team member contributes an individual component dissertation focusing on their specific module, alongside a consolidated research paper and an integrated mobile application.</p>
-
-    <div class="features-grid" style="margin-top:2rem;">
-      <div class="feature-card fade-in">
-        <h3>Core Contributions</h3>
-        <p><strong>1.</strong> Markerless video-based pose estimation pipeline for cricket motion analysis using MediaPipe.<br><br>
-        <strong>2.</strong> Temporal deep learning model for multi-class batting shot classification from landmark sequences.<br><br>
-        <strong>3.</strong> Biomechanical similarity scoring combining DTW with learned shot embeddings.<br><br>
-        <strong>4.</strong> Real-time ball tracking and pitch-mapping system for bowling performance metrics.</p>
-      </div>
-      <div class="feature-card fade-in">
-        <h3>Our Motivation</h3>
-        <p>Cricket coaching and performance analysis today is either subjective — relying on a coach's eye — or prohibitively expensive, requiring specialised motion-capture equipment and controlled environments.<br><br>
-        We believe every player deserves access to data-driven feedback. CRICKAI aims to democratise cricket analytics by making AI-powered analysis accessible through nothing more than a smartphone camera.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo"><img src="assets/images/logo-black.jpeg" alt="CrickAI" /></a>
-        <p>AI-Powered Cricket Analysis — a research initiative on intelligent video-based performance evaluation.</p>
-      </div>
-      <div>
-        <h4>Explore</h4>
-        <div class="footer-links">
-          <a href="domain.html">Domain</a>
-          <a href="milestones.html">Milestones</a>
-          <a href="documents.html">Documents</a>
-          <a href="presentations.html">Presentations</a>
-          <a href="about.html">About</a>
+    <!-- About the Project -->
+    <section class="section">
+      <div class="container">
+        <div class="about-project fade-in">
+          <span class="section-label">About the Project</span>
+          <h2 class="section-title">What is CRICKAI?</h2>
+          <p class="section-desc" style="max-width: 800px">
+            CRICKAI is an end-to-end, AI-powered cricket analysis platform that
+            uses computer vision and deep learning to evaluate batting and
+            bowling performance from standard smartphone video. Rather than
+            relying on expensive motion-capture labs or manual assessment,
+            CRICKAI delivers automated, real-time analysis accessible to any
+            player or coach with a phone camera.
+          </p>
         </div>
       </div>
-      <div>
-        <h4>Connect</h4>
-        <div class="footer-social">
-          <a href="#" aria-label="GitHub">⌨</a>
-          <a href="#" aria-label="Email">✉</a>
+    </section>
+
+    <!-- Four Components -->
+    <section class="section" style="padding-top: 0">
+      <div class="container">
+        <span class="section-label fade-in">Architecture</span>
+        <h2 class="section-title fade-in">
+          Four tightly-integrated components.
+        </h2>
+        <p class="section-desc fade-in">
+          Each module addresses a distinct aspect of cricket performance,
+          combining into a unified analysis pipeline.
+        </p>
+
+        <div class="features-grid" style="margin-top: 2rem">
+          <div class="feature-card fade-in">
+            <span class="feature-number">01</span>
+            <div class="feature-icon">⚡</div>
+            <h3>Shot Classification</h3>
+            <p>
+              Parses video frames using MediaPipe pose estimation, extracting
+              body-landmark sequences fed into a temporal convolutional network
+              to categorise batting strokes across multiple shot types.
+            </p>
+          </div>
+          <div class="feature-card fade-in">
+            <span class="feature-number">02</span>
+            <div class="feature-icon">⇌</div>
+            <h3>Shot Similarity</h3>
+            <p>
+              Compares a player's pose-landmark trajectories against reference
+              professional players using Dynamic Time Warping and learned
+              embeddings, producing quantitative similarity scores.
+            </p>
+          </div>
+          <div class="feature-card fade-in">
+            <span class="feature-number">03</span>
+            <div class="feature-icon">🎯</div>
+            <h3>Bowler Performance</h3>
+            <p>
+              Tracks ball trajectory via YOLOv8 object detection combined with
+              homography-based pitch mapping to extract speed, length, line, and
+              session-aggregate statistics from video.
+            </p>
+          </div>
+          <div class="feature-card fade-in">
+            <span class="feature-number">04</span>
+            <div class="feature-icon">⚖</div>
+            <h3>Bowling Legality</h3>
+            <p>
+              Estimates elbow extension angles from pose landmarks across the
+              bowling action to detect hyperextension beyond the 15° ICC
+              threshold, flagging potentially illegal actions.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">© 2026 CRICKAI Research. All rights reserved.</div>
-  </div>
-</footer>
+    </section>
 
-<script src="script.js"></script>
-</body>
+    <!-- About Team & SLIIT -->
+    <section class="section" style="background: var(--bg-secondary)">
+      <div class="container">
+        <span class="section-label fade-in">About the Team & SLIIT</span>
+        <h2 class="section-title fade-in">Built at SLIIT.</h2>
+        <p class="section-desc fade-in" style="max-width: 800px">
+          CRICKAI is built by four undergraduate researchers from the
+          <strong>Sri Lanka Institute of Information Technology (SLIIT)</strong
+          >, pursuing a B.Sc. (Hons) in Information Technology specialising in
+          Software Engineering. The project applies cutting-edge AI techniques
+          to a real-world sports analytics problem.
+        </p>
+      </div>
+    </section>
+
+    <!-- Supervisors -->
+    <section class="section">
+      <div class="container">
+        <span class="section-label fade-in">Supervision</span>
+        <h2 class="section-title fade-in">Project Supervisors</h2>
+        <div class="team-grid" style="max-width: 540px">
+          <div class="team-card fade-in">
+            <div class="team-avatar">SV</div>
+            <h3>Ms. Narmada Gamage</h3>
+            <p class="role">Supervisor</p>
+            <p>Department of Information Technology, SLIIT.</p>
+          </div>
+          <div class="team-card fade-in">
+            <div class="team-avatar">CS</div>
+            <h3>Ms. Poojani Gunathilake</h3>
+            <p class="role">Co-Supervisor</p>
+            <p>Department of Information Technology, SLIIT.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Team -->
+    <section class="section" style="padding-top: 0">
+      <div class="container">
+        <span class="section-label fade-in">Researchers</span>
+        <h2 class="section-title fade-in">Research Team</h2>
+        <div class="team-grid">
+          <div class="team-card fade-in">
+            <div class="team-avatar">R1</div>
+            <h3>Liyanage M H R S</h3>
+            <p class="role">Shot Classification</p>
+            <p>
+              Lead for the Shot Classification module — temporal convolutional
+              network for automated batting stroke categorisation.
+            </p>
+            <span class="team-id">IT22366368</span>
+          </div>
+          <div class="team-card fade-in">
+            <div class="team-avatar">R2</div>
+            <h3>Winsara A J</h3>
+            <p class="role">Shot Similarity</p>
+            <p>
+              Lead for the Shot Similarity engine — DTW and learned embeddings
+              for technique comparison scoring.
+            </p>
+            <span class="team-id">IT22150516</span>
+          </div>
+          <div class="team-card fade-in">
+            <div class="team-avatar">R3</div>
+            <h3>Nayanajith W M T</h3>
+            <p class="role">Bowler Performance</p>
+            <p>
+              Lead for Bowler Performance analysis — ball tracking, speed
+              estimation, and delivery metrics from video.
+            </p>
+            <span class="team-id">IT22917966</span>
+          </div>
+          <div class="team-card fade-in">
+            <div class="team-avatar">R4</div>
+            <h3>Madhushan A G K</h3>
+            <p class="role">Bowling Legality</p>
+            <p>
+              Lead for Bowling Legality detection — elbow-angle estimation for
+              illegal action flagging.
+            </p>
+            <span class="team-id">IT22331168</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Scope -->
+    <section class="section" style="background: var(--bg-secondary)">
+      <div class="container">
+        <span class="section-label fade-in">About the Research</span>
+        <h2 class="section-title fade-in">Dissertation & Deliverables</h2>
+        <p class="section-desc fade-in" style="max-width: 800px">
+          This research sits at the intersection of computer vision, deep
+          learning, and sports analytics. Each team member contributes an
+          individual component dissertation focusing on their specific module,
+          alongside a consolidated research paper and an integrated mobile
+          application.
+        </p>
+
+        <div class="features-grid" style="margin-top: 2rem">
+          <div class="feature-card fade-in">
+            <h3>Core Contributions</h3>
+            <p>
+              <strong>1.</strong> Markerless video-based pose estimation
+              pipeline for cricket motion analysis using MediaPipe.<br /><br />
+              <strong>2.</strong> Temporal deep learning model for multi-class
+              batting shot classification from landmark sequences.<br /><br />
+              <strong>3.</strong> Biomechanical similarity scoring combining DTW
+              with learned shot embeddings.<br /><br />
+              <strong>4.</strong> Real-time ball tracking and pitch-mapping
+              system for bowling performance metrics.
+            </p>
+          </div>
+          <div class="feature-card fade-in">
+            <h3>Our Motivation</h3>
+            <p>
+              Cricket coaching and performance analysis today is either
+              subjective — relying on a coach's eye — or prohibitively
+              expensive, requiring specialised motion-capture equipment and
+              controlled environments.<br /><br />
+              We believe every player deserves access to data-driven feedback.
+              CRICKAI aims to democratise cricket analytics by making AI-powered
+              analysis accessible through nothing more than a smartphone camera.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="nav-logo"
+              ><img src="assets/images/logo-black.jpeg" alt="CrickAI"
+            /></a>
+            <p>
+              AI-Powered Cricket Analysis — a research initiative on intelligent
+              video-based performance evaluation.
+            </p>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <div class="footer-links">
+              <a href="domain.html">Domain</a>
+              <a href="milestones.html">Milestones</a>
+              <a href="documents.html">Documents</a>
+              <a href="presentations.html">Presentations</a>
+              <a href="about.html">About</a>
+            </div>
+          </div>
+          <div>
+            <h4>Connect</h4>
+            <div class="footer-social">
+              <a href="#" aria-label="GitHub">⌨</a>
+              <a href="#" aria-label="Email">✉</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          © 2026 CRICKAI Research. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
