@@ -1,488 +1,339 @@
-/* ===== FONTS ===== */
-@font-face {
-  font-family: 'RFDewi';
-  src: url('assets/fonts/RFDewi-Regular.ttf') format('truetype');
-  font-weight: 400;
-}
-@font-face {
-  font-family: 'TapasSans';
-  src: url('assets/fonts/Tapas Sans.ttf') format('truetype');
-  font-weight: 400;
-}
-@font-face {
-  font-family: 'PeterBlack';
-  src: url('assets/fonts/peter-black.otf') format('opentype');
-  font-weight: 900;
-}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — CRICKAI Research</title>
+    <meta
+      name="description"
+      content="Meet the team behind CrickAI — the researchers driving AI-powered cricket analysis."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <a href="index.html" class="nav-logo"
+          ><img src="assets/images/logo-black.jpeg" alt="CrickAI"
+        /></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="domain.html">Domain</a>
+          <a href="milestones.html">Milestones</a>
+          <a href="documents.html">Documents</a>
+          <a href="presentations.html">Presentations</a>
+          <a href="about.html" class="active">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-right">
+          <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+        </div>
+      </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html">Home</a>
+      <a href="domain.html">Domain</a>
+      <a href="milestones.html">Milestones</a>
+      <a href="documents.html">Documents</a>
+      <a href="presentations.html">Presentations</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
 
-/* ===== RESET & BASE ===== */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-label">Platform & People</span>
+        <h1>The story behind CRICKAI.</h1>
+        <p>
+          An undergraduate research project leveraging AI and computer vision to
+          revolutionise cricket performance analysis.
+        </p>
+      </div>
+    </section>
 
-:root {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f6f6f7;
-  --bg-card: #ffffff;
-  --bg-card-hover: #f0f0f2;
-  --border: #e2e2e5;
-  --text-primary: #0a0a0a;
-  --text-secondary: #555555;
-  --text-muted: #999999;
-  --accent: #0a0a0a;
-  --accent-dim: #333333;
-  --accent-glow: rgba(0, 0, 0, 0.05);
-  --green: #222222;
-  --font-display: 'PeterBlack', 'TapasSans', sans-serif;
-  --font-heading: 'RFDewi', system-ui, sans-serif;
-  --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-label: 'TapasSans', sans-serif;
-  --nav-height: 64px;
-  --max-width: 1200px;
-  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+    <!-- About the Project -->
+    <section class="section">
+      <div class="container">
+        <div class="about-project fade-in">
+          <span class="section-label">About the Project</span>
+          <h2 class="section-title">What is CRICKAI?</h2>
+          <p class="section-desc" style="max-width: 800px">
+            CRICKAI is an end-to-end, AI-powered cricket analysis platform that
+            uses computer vision and deep learning to evaluate batting and
+            bowling performance from standard smartphone video. Rather than
+            relying on expensive motion-capture labs or manual assessment,
+            CRICKAI delivers automated, real-time analysis accessible to any
+            player or coach with a phone camera.
+          </p>
+        </div>
+      </div>
+    </section>
 
-html { scroll-behavior: smooth; font-size: 16px; }
+    <!-- Four Components -->
+    <section class="section" style="padding-top: 0">
+      <div class="container">
+        <span class="section-label fade-in">Architecture</span>
+        <h2 class="section-title fade-in">
+          Four tightly-integrated components.
+        </h2>
+        <p class="section-desc fade-in">
+          Each module addresses a distinct aspect of cricket performance,
+          combining into a unified analysis pipeline.
+        </p>
 
-body {
-  font-family: var(--font-body);
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  line-height: 1.6;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
+        <div class="features-grid" style="margin-top: 2rem">
+          <div class="feature-card fade-in">
+            <span class="feature-number">01</span>
+            <div class="feature-icon">⚡</div>
+            <h3>Shot Classification</h3>
+            <p>
+              Parses video frames using MediaPipe pose estimation, extracting
+              body-landmark sequences fed into a temporal convolutional network
+              to categorise batting strokes across multiple shot types.
+            </p>
+          </div>
+          <div class="feature-card fade-in">
+            <span class="feature-number">02</span>
+            <div class="feature-icon">⇌</div>
+            <h3>Shot Similarity</h3>
+            <p>
+              Compares a player's pose-landmark trajectories against reference
+              professional players using Dynamic Time Warping and learned
+              embeddings, producing quantitative similarity scores.
+            </p>
+          </div>
+          <div class="feature-card fade-in">
+            <span class="feature-number">03</span>
+            <div class="feature-icon">🎯</div>
+            <h3>Bowler Performance</h3>
+            <p>
+              Tracks ball trajectory via YOLOv8 object detection combined with
+              homography-based pitch mapping to extract speed, length, line, and
+              session-aggregate statistics from video.
+            </p>
+          </div>
+          <div class="feature-card fade-in">
+            <span class="feature-number">04</span>
+            <div class="feature-icon">⚖</div>
+            <h3>Bowling Legality</h3>
+            <p>
+              Estimates elbow extension angles from pose landmarks across the
+              bowling action to detect hyperextension beyond the 15° ICC
+              threshold, flagging potentially illegal actions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; display: block; }
-ul { list-style: none; }
+    <!-- About Team & SLIIT -->
+    <section class="section" style="background: var(--bg-secondary)">
+      <div class="container">
+        <span class="section-label fade-in">About the Team & SLIIT</span>
+        <h2 class="section-title fade-in">Built at SLIIT.</h2>
+        <p class="section-desc fade-in" style="max-width: 800px">
+          CRICKAI is built by four undergraduate researchers from the
+          <strong>Sri Lanka Institute of Information Technology (SLIIT)</strong
+          >, pursuing a B.Sc. (Hons) in Information Technology specialising in
+          Software Engineering. The project applies cutting-edge AI techniques
+          to a real-world sports analytics problem.
+        </p>
+      </div>
+    </section>
 
-.container { max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
+    <!-- Supervisors -->
+    <section class="section">
+      <div class="container">
+        <span class="section-label fade-in">Supervision</span>
+        <h2 class="section-title fade-in">Project Supervisors</h2>
+        <div class="team-grid" style="max-width: 540px">
+          <div class="team-card fade-in">
+            <img
+              src="./assets/images/1.png"
+              alt="Ms. Narmada Gamage"
+              class="team-avatar"
+              width="80"
+              height="80"
+              loading="lazy"
+            />
+            <h3>Ms. Narmada Gamage</h3>
+            <p class="role">Supervisor</p>
+            <p>Department of Information Technology, SLIIT.</p>
+          </div>
+          <div class="team-card fade-in">
+            <img
+              src="./assets/images/2.png"
+              alt="Ms. Poojani Gunathilake"
+              class="team-avatar"
+              width="80"
+              height="80"
+              loading="lazy"
+            />
+            <h3>Ms. Poojani Gunathilake</h3>
+            <p class="role">Co-Supervisor</p>
+            <p>Department of Information Technology, SLIIT.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-/* ===== NAVBAR ===== */
-.navbar {
-  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  height: var(--nav-height);
-  transition: var(--transition);
-}
-.navbar .container {
-  display: flex; align-items: center; justify-content: space-between; height: 100%;
-}
-.nav-logo {
-  display: flex; align-items: center; gap: 0.75rem;
-  font-family: var(--font-label); font-size: 1.1rem;
-  letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-primary);
-}
-.nav-logo img { height: 24px; width: auto; }
-.nav-links { display: flex; gap: 0.25rem; }
-.nav-links a {
-  padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.875rem;
-  color: var(--text-secondary); transition: var(--transition);
-  letter-spacing: 0.02em;
-}
-.nav-links a:hover, .nav-links a.active {
-  color: var(--text-primary); background: rgba(0,0,0,0.04);
-}
-.nav-right { display: flex; align-items: center; gap: 1rem; }
-.theme-toggle {
-  display: none;
-}
-.hamburger {
-  display: none; background: none; border: none; color: var(--text-primary);
-  cursor: pointer; padding: 0.5rem; font-size: 1.5rem;
-}
+    <!-- Research Team -->
+    <section class="section" style="padding-top: 0">
+      <div class="container">
+        <span class="section-label fade-in">Researchers</span>
+        <h2 class="section-title fade-in">Research Team</h2>
+        <div class="team-grid">
+          <div class="team-card fade-in">
+            <img
+              src="./assets/images/3.png"
+              alt="Liyanage M H R S"
+              class="team-avatar"
+              width="80"
+              height="80"
+              loading="lazy"
+            />
+            <h3>Liyanage M H R S</h3>
+            <p class="role">Shot Classification</p>
+            <p>
+              Lead for the Shot Classification module — temporal convolutional
+              network for automated batting stroke categorisation.
+            </p>
+            <span class="team-id">IT22366368</span>
+          </div>
+          <div class="team-card fade-in">
+            <img
+              src="./assets/images/4.png"
+              alt="Winsara A J"
+              class="team-avatar"
+              width="80"
+              height="80"
+              loading="lazy"
+            />
+            <h3>Winsara A J</h3>
+            <p class="role">Shot Similarity</p>
+            <p>
+              Lead for the Shot Similarity engine — DTW and learned embeddings
+              for technique comparison scoring.
+            </p>
+            <span class="team-id">IT22150516</span>
+          </div>
+          <div class="team-card fade-in">
+            <img
+              src="./assets/images/5.png"
+              alt="Nayanajith W M T"
+              class="team-avatar"
+              width="80"
+              height="80"
+              loading="lazy"
+            />
+            <h3>Nayanajith W M T</h3>
+            <p class="role">Bowler Performance</p>
+            <p>
+              Lead for Bowler Performance analysis — ball tracking, speed
+              estimation, and delivery metrics from video.
+            </p>
+            <span class="team-id">IT22917966</span>
+          </div>
+          <div class="team-card fade-in">
+            <img
+              src="./assets/images/6.png"
+              alt="Madhushan A G K"
+              class="team-avatar"
+              width="80"
+              height="80"
+              loading="lazy"
+            />
+            <h3>Madhushan A G K</h3>
+            <p class="role">Bowling Legality</p>
+            <p>
+              Lead for Bowling Legality detection — elbow-angle estimation for
+              illegal action flagging.
+            </p>
+            <span class="team-id">IT22331168</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-/* Mobile Nav */
-.mobile-nav {
-  display: none; position: fixed; top: var(--nav-height); left: 0; width: 100%;
-  background: rgba(255,255,255,0.97); backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  flex-direction: column; padding: 1rem 2rem 2rem;
-  transform: translateY(-100%); opacity: 0;
-  transition: var(--transition);
-}
-.mobile-nav.open { transform: translateY(0); opacity: 1; }
-.mobile-nav a {
-  padding: 0.75rem 0; color: var(--text-secondary); font-size: 1rem;
-  border-bottom: 1px solid var(--border); transition: var(--transition);
-}
-.mobile-nav a:last-child { border-bottom: none; }
-.mobile-nav a:hover { color: var(--text-primary); }
+    <!-- Research Scope -->
+    <section class="section" style="background: var(--bg-secondary)">
+      <div class="container">
+        <span class="section-label fade-in">About the Research</span>
+        <h2 class="section-title fade-in">Dissertation & Deliverables</h2>
+        <p class="section-desc fade-in" style="max-width: 800px">
+          This research sits at the intersection of computer vision, deep
+          learning, and sports analytics. Each team member contributes an
+          individual component dissertation focusing on their specific module,
+          alongside a consolidated research paper and an integrated mobile
+          application.
+        </p>
 
-/* ===== HERO ===== */
-.hero {
-  min-height: 100vh; display: flex; align-items: center; justify-content: center;
-  text-align: center; padding: 8rem 2rem 4rem;
-  position: relative; overflow: hidden;
-}
-.hero::before {
-  content: ''; position: absolute; top: -40%; left: 50%; transform: translateX(-50%);
-  width: 800px; height: 800px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,0,0,0.03) 0%, transparent 70%);
-  pointer-events: none; animation: pulseGlow 6s ease-in-out infinite;
-}
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.5; transform: translateX(-50%) scale(1); }
-  50% { opacity: 1; transform: translateX(-50%) scale(1.1); }
-}
-.hero-content { position: relative; z-index: 1; max-width: 800px; }
-.hero-badge {
-  display: inline-block; padding: 0.4rem 1.25rem; border-radius: 50px;
-  border: 1px solid var(--border); background: var(--bg-secondary);
-  font-family: var(--font-label); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--text-secondary); margin-bottom: 2rem;
-}
-.hero h1 {
-  font-family: var(--font-display); font-size: clamp(3rem, 8vw, 6rem);
-  line-height: 1; letter-spacing: -0.02em; margin-bottom: 1.5rem;
-  color: var(--text-primary);
-}
-.hero h1 .accent { color: var(--text-primary); }
-.hero p {
-  font-size: 1.125rem; color: var(--text-secondary);
-  max-width: 540px; margin: 0 auto 2.5rem; line-height: 1.7;
-}
-.hero-cta {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  padding: 0.875rem 2rem; border-radius: 10px;
-  background: #0a0a0a; color: #fff; font-size: 0.9rem;
-  font-weight: 600; letter-spacing: 0.02em;
-  transition: var(--transition); border: none; cursor: pointer;
-}
-.hero-cta:hover { background: #333; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
-.hero-scroll {
-  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-  color: var(--text-muted); font-size: 0.75rem; letter-spacing: 0.1em;
-  animation: bobDown 2s ease-in-out infinite;
-}
-@keyframes bobDown {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
-}
+        <div class="features-grid" style="margin-top: 2rem">
+          <div class="feature-card fade-in">
+            <h3>Core Contributions</h3>
+            <p>
+              <strong>1.</strong> Markerless video-based pose estimation
+              pipeline for cricket motion analysis using MediaPipe.<br /><br />
+              <strong>2.</strong> Temporal deep learning model for multi-class
+              batting shot classification from landmark sequences.<br /><br />
+              <strong>3.</strong> Biomechanical similarity scoring combining DTW
+              with learned shot embeddings.<br /><br />
+              <strong>4.</strong> Real-time ball tracking and pitch-mapping
+              system for bowling performance metrics.
+            </p>
+          </div>
+          <div class="feature-card fade-in">
+            <h3>Our Motivation</h3>
+            <p>
+              Cricket coaching and performance analysis today is either
+              subjective — relying on a coach's eye — or prohibitively
+              expensive, requiring specialised motion-capture equipment and
+              controlled environments.<br /><br />
+              We believe every player deserves access to data-driven feedback.
+              CRICKAI aims to democratise cricket analytics by making AI-powered
+              analysis accessible through nothing more than a smartphone camera.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-/* ===== STATS BAR ===== */
-.stats-bar {
-  padding: 3rem 0; border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border); background: var(--bg-secondary);
-}
-.stats-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center;
-}
-.stat-item h3 {
-  font-family: var(--font-display); font-size: 2.5rem;
-  color: var(--text-primary); margin-bottom: 0.25rem;
-}
-.stat-item p { font-family: var(--font-label); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); }
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="nav-logo"
+              ><img src="assets/images/logo-black.jpeg" alt="CrickAI"
+            /></a>
+            <p>
+              AI-Powered Cricket Analysis — a research initiative on intelligent
+              video-based performance evaluation.
+            </p>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <div class="footer-links">
+              <a href="domain.html">Domain</a>
+              <a href="milestones.html">Milestones</a>
+              <a href="documents.html">Documents</a>
+              <a href="presentations.html">Presentations</a>
+              <a href="about.html">About</a>
+            </div>
+          </div>
+          <div>
+            <h4>Connect</h4>
+            <div class="footer-social">
+              <a href="#" aria-label="GitHub">⌨</a>
+              <a href="#" aria-label="Email">✉</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          © 2026 CRICKAI Research. All rights reserved.
+        </div>
+      </div>
+    </footer>
 
-/* ===== SECTION COMMON ===== */
-.section { padding: 6rem 0; }
-.section-label {
-  font-family: var(--font-label); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--text-muted); margin-bottom: 1rem;
-}
-.section-title {
-  font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.15; margin-bottom: 1rem;
-}
-.section-desc {
-  font-size: 1rem; color: var(--text-secondary); max-width: 600px; line-height: 1.7;
-}
-
-/* ===== FEATURES ===== */
-.features-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem;
-}
-.feature-card {
-  background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: 16px; padding: 2rem; transition: var(--transition);
-  position: relative; overflow: hidden;
-}
-.feature-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, transparent, #0a0a0a, transparent);
-  opacity: 0; transition: var(--transition);
-}
-.feature-card:hover { background: var(--bg-card-hover); border-color: #ccc; transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
-.feature-card:hover::before { opacity: 1; }
-.feature-number {
-  font-family: var(--font-display); font-size: 3rem;
-  color: rgba(0,0,0,0.05); position: absolute; top: 1rem; right: 1.5rem;
-}
-.feature-icon {
-  width: 48px; height: 48px; border-radius: 12px;
-  background: #0a0a0a; display: flex; align-items: center; justify-content: center;
-  margin-bottom: 1.25rem; font-size: 1.25rem; color: #fff;
-}
-.feature-card h3 {
-  font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 0.75rem;
-}
-.feature-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
-
-/* ===== APP SHOWCASE ===== */
-.showcase { background: var(--bg-secondary); }
-.showcase-header { text-align: center; margin-bottom: 3rem; }
-.showcase-header .section-desc { margin: 0.75rem auto 0; }
-.phone-carousel {
-  display: flex; gap: 1.5rem; justify-content: center; align-items: center;
-  overflow-x: auto; padding: 2rem 0; scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch; scrollbar-width: none;
-}
-.phone-carousel::-webkit-scrollbar { display: none; }
-.phone-frame {
-  flex-shrink: 0; width: 260px; border-radius: 24px; overflow: hidden;
-  border: 1px solid var(--border); background: #fff;
-  transition: var(--transition); scroll-snap-align: center;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-}
-.phone-frame:hover { transform: scale(1.05); box-shadow: 0 16px 50px rgba(0,0,0,0.12); }
-.phone-frame img { width: 100%; height: auto; display: block; }
-
-/* ===== DOMAIN / RESEARCH ===== */
-.domain-layout { display: grid; grid-template-columns: 240px 1fr; gap: 3rem; margin-top: 3rem; }
-.domain-sidebar { position: sticky; top: calc(var(--nav-height) + 2rem); align-self: start; }
-.domain-sidebar h4 {
-  font-family: var(--font-label);
-  font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--text-muted); margin-bottom: 1rem;
-}
-.domain-sidebar a {
-  display: flex; align-items: center; gap: 0.75rem;
-  padding: 0.6rem 1rem; border-radius: 8px; font-size: 0.9rem;
-  color: var(--text-secondary); transition: var(--transition); margin-bottom: 0.25rem;
-}
-.domain-sidebar a:hover, .domain-sidebar a.active {
-  color: #0a0a0a; background: rgba(0,0,0,0.05);
-}
-.domain-content { max-width: 800px; }
-.domain-block { margin-bottom: 4rem; }
-.domain-block .block-number {
-  font-family: var(--font-display); font-size: 5rem; color: rgba(0,0,0,0.04);
-  line-height: 1; margin-bottom: -1.5rem; position: relative;
-}
-.domain-block h3 { font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem; }
-.domain-block p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; }
-
-/* ===== MILESTONES ===== */
-.timeline { position: relative; margin-top: 3rem; padding-left: 2rem; }
-.timeline::before {
-  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
-  width: 2px; background: var(--border);
-}
-.timeline-item {
-  position: relative; margin-bottom: 3rem; padding-left: 2rem;
-}
-.timeline-item::before {
-  content: ''; position: absolute; left: -2rem; top: 0.5rem;
-  width: 12px; height: 12px; border-radius: 50%;
-  background: #0a0a0a; border: 3px solid #fff;
-  box-shadow: 0 0 0 2px #ccc;
-}
-.timeline-item.completed::before { background: #0a0a0a; }
-.timeline-date {
-  font-family: var(--font-label);
-  font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--text-muted); margin-bottom: 0.5rem;
-}
-.timeline-item.completed .timeline-date { color: #0a0a0a; }
-.timeline-card {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
-  padding: 1.5rem; transition: var(--transition);
-}
-.timeline-card:hover { background: var(--bg-card-hover); box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-.timeline-card h3 { font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.5rem; }
-.timeline-card p { font-size: 0.9rem; color: var(--text-secondary); }
-.timeline-tag {
-  display: inline-block; padding: 0.2rem 0.6rem; border-radius: 4px;
-  font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase;
-  background: rgba(0,0,0,0.06); color: var(--text-muted); margin-top: 0.75rem;
-}
-.timeline-item.completed .timeline-tag { background: #0a0a0a; color: #fff; }
-
-/* ===== ABOUT / TEAM ===== */
-.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
-.team-card {
-  background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: 16px; padding: 2rem; text-align: center; transition: var(--transition);
-}
-.team-card:hover { background: var(--bg-card-hover); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
-.team-avatar {
-  width: 80px; height: 80px; border-radius: 50%;
-  background: #0a0a0a; display: block; object-fit: cover;
-  object-position: center; margin: 0 auto 1.25rem;
-  border: 2px solid rgba(0,0,0,0.08);
-}
-.team-card h3 { font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.25rem; }
-.team-card .role { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem; }
-.team-card p { font-size: 0.85rem; color: var(--text-secondary); }
-.team-id {
-  display: inline-block; margin-top: 0.75rem; padding: 0.2rem 0.6rem;
-  border-radius: 4px; font-family: monospace; font-size: 0.7rem;
-  background: rgba(0,0,0,0.06); color: var(--text-muted);
-}
-.about-project { max-width: 800px; }
-
-/* ===== CONTACT ===== */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
-.contact-info-item {
-  display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 2rem;
-}
-.contact-icon {
-  width: 44px; height: 44px; border-radius: 10px;
-  background: #0a0a0a; display: flex; align-items: center; justify-content: center;
-  color: #fff; font-size: 1.1rem; flex-shrink: 0;
-}
-.contact-info-item h4 { font-size: 0.9rem; margin-bottom: 0.25rem; }
-.contact-info-item p { font-size: 0.875rem; color: var(--text-secondary); }
-.contact-info-item a { color: inherit; text-decoration: none; }
-.contact-info-item a:hover { color: var(--text-primary); }
-.contact-form { display: flex; flex-direction: column; gap: 1rem; }
-.contact-form input, .contact-form textarea {
-  background: #fff; border: 1px solid var(--border); border-radius: 10px;
-  padding: 0.875rem 1rem; color: var(--text-primary); font-family: var(--font-body);
-  font-size: 0.9rem; transition: var(--transition); resize: vertical;
-}
-.contact-form input:focus, .contact-form textarea:focus {
-  outline: none; border-color: #0a0a0a; box-shadow: 0 0 0 3px rgba(0,0,0,0.08);
-}
-.contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--text-muted); }
-.contact-form button {
-  padding: 0.875rem 2rem; border-radius: 10px; border: none;
-  background: #0a0a0a; color: #fff; font-family: var(--font-body);
-  font-size: 0.9rem; font-weight: 600; cursor: pointer;
-  transition: var(--transition); align-self: flex-start;
-}
-.contact-form button:hover { background: #333; }
-.form-status {
-  min-height: 1.25rem; color: var(--text-secondary); font-size: 0.82rem;
-  line-height: 1.5;
-}
-
-/* ===== FOOTER ===== */
-.footer {
-  padding: 4rem 0 2rem; border-top: 1px solid var(--border);
-  background: #0a0a0a; color: #fff;
-}
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
-.footer-brand p { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-top: 1rem; max-width: 320px; line-height: 1.7; }
-.footer .nav-logo { color: #fff; }
-.footer .nav-logo img { filter: invert(1); }
-.footer h4 {
-  font-family: var(--font-label);
-  font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
-  color: rgba(255,255,255,0.4); margin-bottom: 1.25rem;
-}
-.footer-links a {
-  display: block; color: rgba(255,255,255,0.6); font-size: 0.9rem;
-  padding: 0.3rem 0; transition: var(--transition);
-}
-.footer-links a:hover { color: #fff; }
-.footer-social { display: flex; gap: 0.75rem; }
-.footer-social a {
-  width: 36px; height: 36px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2);
-  display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,0.6); font-size: 1rem; transition: var(--transition);
-}
-.footer-social a:hover { color: #fff; border-color: #fff; background: rgba(255,255,255,0.1); }
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;
-  font-size: 0.8rem; color: rgba(255,255,255,0.4);
-}
-
-/* ===== PAGE HERO (sub-pages) ===== */
-.page-hero {
-  padding: 10rem 0 4rem; text-align: center; position: relative;
-  background: var(--bg-secondary); border-bottom: 1px solid var(--border);
-}
-.page-hero .section-label { position: relative; z-index: 1; }
-.page-hero h1 {
-  font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 3.5rem);
-  position: relative; z-index: 1; margin-bottom: 1rem;
-}
-.page-hero p {
-  font-size: 1.05rem; color: var(--text-secondary); position: relative;
-  z-index: 1; max-width: 600px; margin: 0 auto;
-}
-
-/* ===== DOCUMENTS ===== */
-.docs-grid { display: flex; flex-direction: column; gap: 1rem; }
-.doc-card {
-  display: flex; align-items: center; gap: 1.5rem;
-  background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: 12px; padding: 1.5rem 2rem; transition: var(--transition);
-}
-.doc-card:hover { background: var(--bg-card-hover); box-shadow: 0 4px 20px rgba(0,0,0,0.06); transform: translateX(4px); }
-.doc-icon { font-size: 2rem; flex-shrink: 0; }
-.doc-info { flex: 1; }
-.doc-type {
-  font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.15em;
-  text-transform: uppercase; color: var(--text-muted);
-}
-.doc-info h3 { font-family: var(--font-heading); font-size: 1.1rem; margin: 0.25rem 0; }
-.doc-info p { font-size: 0.85rem; color: var(--text-secondary); }
-.doc-download {
-  flex-shrink: 0; padding: 0.5rem 1.25rem; border-radius: 8px;
-  background: #0a0a0a; color: #fff; font-size: 0.8rem; font-weight: 600;
-  transition: var(--transition);
-}
-.doc-download:hover { background: #333; }
-
-/* ===== PRESENTATIONS ===== */
-.pres-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-.pres-card {
-  background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: 16px; overflow: hidden; transition: var(--transition);
-}
-.pres-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.08); transform: translateY(-4px); }
-.pres-thumb {
-  height: 160px; background: #0a0a0a;
-  display: flex; align-items: center; justify-content: center;
-}
-.pres-slide-icon {
-  width: 56px; height: 56px; border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.3); display: flex; align-items: center;
-  justify-content: center; font-size: 1.25rem; color: #fff;
-  transition: var(--transition);
-}
-.pres-card:hover .pres-slide-icon { border-color: #fff; background: rgba(255,255,255,0.1); }
-.pres-info { padding: 1.5rem; }
-.pres-date {
-  font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.15em;
-  text-transform: uppercase; color: var(--text-muted);
-}
-.pres-info h3 { font-family: var(--font-heading); font-size: 1.1rem; margin: 0.25rem 0 0.5rem; }
-.pres-info p { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6; }
-.pres-link { font-size: 0.85rem; font-weight: 600; color: #0a0a0a; transition: var(--transition); }
-.pres-link:hover { opacity: 0.6; }
-
-/* ===== ANIMATIONS ===== */
-.fade-in {
-  opacity: 0; transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-in.visible { opacity: 1; transform: translateY(0); }
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .hamburger { display: block; }
-  .mobile-nav { display: flex; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-  .features-grid { grid-template-columns: 1fr; }
-  .domain-layout { grid-template-columns: 1fr; }
-  .domain-sidebar { position: static; display: flex; flex-wrap: wrap; gap: 0.5rem; }
-  .domain-sidebar a { font-size: 0.8rem; padding: 0.4rem 0.75rem; }
-  .contact-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .phone-frame { width: 200px; }
-  .team-grid { grid-template-columns: 1fr 1fr; }
-  .pres-grid { grid-template-columns: 1fr; }
-  .doc-card { flex-direction: column; align-items: flex-start; text-align: left; }
-  .doc-download { align-self: flex-start; }
-}
-@media (max-width: 480px) {
-  .stats-grid { grid-template-columns: 1fr 1fr; }
-  .team-grid { grid-template-columns: 1fr; }
-  .phone-frame { width: 180px; }
-}
+    <script src="script.js"></script>
+  </body>
+</html>
